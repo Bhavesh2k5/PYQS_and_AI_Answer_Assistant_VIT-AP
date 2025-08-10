@@ -34,4 +34,5 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  base: process.env.VITE_BASE_URL || "/PYQS_and_AI_Answer_Assistant_VIT-AP",
 });
