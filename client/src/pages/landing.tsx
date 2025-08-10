@@ -156,7 +156,7 @@ export default function Landing() {
         // Convert screen coordinates to normalized device coordinates
         const x = (e.clientX / window.innerWidth) * 2 - 1;
         const y = -(e.clientY / window.innerHeight) * 2 + 1;
-        
+
         // Emit mouse move event to Spline scene
         splineViewer.emitEventReverse('mouseMove', { x, y });
       }
@@ -173,7 +173,7 @@ export default function Landing() {
 
   if (showSolver) {
     return (
-      <motion.div 
+      <motion.div
         className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black"
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -181,7 +181,7 @@ export default function Landing() {
         transition={{ duration: 0.5 }}
       >
         {/* Header with Back Button */}
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="relative z-10 p-6"
@@ -209,9 +209,9 @@ export default function Landing() {
 
         {/* Main Content */}
         <main className="max-w-4xl mx-auto px-6 py-12">
-          
+
           {/* Hero Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -227,7 +227,7 @@ export default function Landing() {
           </motion.section>
 
           {/* Input Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -341,7 +341,7 @@ export default function Landing() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="mb-8"
               >
-                <motion.div 
+                <motion.div
                   className="glassmorphism p-4 shadow-lg rounded-lg border-l-4 border-indigo-500"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
@@ -361,7 +361,7 @@ export default function Landing() {
                       {isEditingText ? "Save" : "Edit"}
                     </Button>
                   </div>
-                  
+
                   <div className="bg-gray-900/30 rounded-lg p-3 border border-gray-700/50 max-h-32 overflow-y-auto">
                     {isEditingText ? (
                       <Textarea
@@ -428,19 +428,19 @@ export default function Landing() {
                       <Lightbulb className="text-yellow-500 mr-3" />
                       AI-Generated Solutions
                     </h3>
-                    
+
                     {solutions && solutions.trim() ? (
                       <SolutionDisplay solutions={solutions} />
                     ) : (
                       <div className="bg-red-900/20 border border-red-500/30 rounded-xl p-6 text-center">
                         <p className="text-red-400 mb-2 font-semibold">No Solutions Generated</p>
                         <p className="text-gray-400 text-sm">
-                          The AI model returned an empty response. This might be due to API limits or model availability. 
+                          The AI model returned an empty response. This might be due to API limits or model availability.
                           Please try again or check if your question is clear.
                         </p>
                       </div>
                     )}
-                    
+
                     <div className="mt-8 flex flex-wrap gap-4 justify-center">
                       <Button
                         onClick={handleCopySolutions}
@@ -481,22 +481,29 @@ export default function Landing() {
     <div className="landing-page">
       {/* Spline 3D Robot - Interactive */}
       <div className="spline-robot-container">
-        <spline-viewer 
+        <spline-viewer
           className="spline-robot"
           url="https://prod.spline.design/iGsePslVUFpNTgG2/scene.splinecode"
         />
       </div>
 
       {/* Side Buttons */}
-      <button 
+      <button
         className="side-button left-button"
         style={{ zIndex: 100 }}
         onClick={() => console.log("Question Papers clicked")}
       >
         Question Papers
       </button>
-      
-      <button 
+      <button
+        className="side-button middle-button"
+        style={{ zIndex: 100 }}
+        onClick={() => window.open("https://www.youtube.com/", "_blank")}
+      >
+        Previous Questions
+      </button>
+
+      <button
         className="side-button right-button"
         style={{ zIndex: 100 }}
         onClick={(e) => {
@@ -510,7 +517,7 @@ export default function Landing() {
       </button>
 
       {/* Navigation */}
-      <motion.nav 
+      <motion.nav
         className="navbar"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -519,7 +526,7 @@ export default function Landing() {
         <h1 className="logo">VIT AP</h1>
         <ul className="menu">
         </ul>
-        <motion.button 
+        <motion.button
           className="btn1"
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
@@ -529,7 +536,7 @@ export default function Landing() {
       </motion.nav>
 
       {/* Background Text Content */}
-      <motion.main 
+      <motion.main
         className="background-text-content"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
